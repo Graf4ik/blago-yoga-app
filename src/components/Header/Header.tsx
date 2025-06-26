@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styles from './header.module.scss';
-import Navbar from "@/components/navbar/navbar";
+import Navbar from "../Navbar/Navbar";
 
 const Header:FC = () => (
     <header className={styles.header}>
