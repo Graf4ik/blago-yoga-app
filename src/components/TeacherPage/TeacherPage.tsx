@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { FaInstagram, FaSpotify, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
+import { FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
 import styles from './TeacherPage.module.scss';
 
 

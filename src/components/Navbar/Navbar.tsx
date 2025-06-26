@@ -1,32 +1,15 @@
 'use client'
 
 import React, { FC, useState } from 'react';
-import Link from 'next/link';
 import styles from './Navbar.module.scss';
 import ContactSidebar from '../ContactSidebar/ContactSidebar';
-import { navigation } from './constants';
 
 
 const Navbar: FC = () => {
   const [isActive, setActive] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  // const { pathname } = usePathname();
   const openMenu = () => setActive(true);
   const closeMenu = () => setActive(false);
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    if (path.startsWith('#')) {
-      e.preventDefault();
-      const id = path.substring(1);
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    }
-  };
 
   return (
     <nav className={styles.navbar}>
