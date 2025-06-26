@@ -1,146 +1,119 @@
 'use client';
 
-import React from 'react';
-import Image from 'next/image';
+import React, { useState } from 'react';
+import { FaInstagram, FaSpotify, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
 import styles from './TeacherPage.module.scss';
 
-const reviews = [
+
+
+const reviewsSlider = [
   {
-    name: 'Мария',
-    text: 'Екатерина — потрясающий наставник! После ретрита появилось ощущение внутреннего покоя и вдохновения.'
+    text: 'THIS WAS AN EXQUISITE PRACTICE, MALLORY! GENTLE, POWERFUL, AND CHALLENGING. IT FELT LIKE A REAL BALM FOR A STRESSFUL AND UNCERTAIN WEEK. I PARTICULARLY LOVED THE AB WORK!',
+    author: 'Courtney',
+    link: 'The Class for Centering with Mallory',
+    linkUrl: '#',
   },
   {
-    name: 'Иван',
-    text: 'Очень чуткий и профессиональный подход. Рекомендую всем, кто ищет гармонию и развитие.'
+    text: 'MALLORY&apos;S PRESENCE IS LIFE CHANGING. I LOVE HOW SHE LEADS WITH GRACE, AND INVITES US INTO A FULLER BECOMING, FULL OF SELF-LOVE AND INTEGRITY TOWARD HOW THAT RIPPLES OUT TO THE COLLECTIVE. SETTLED BODIES SETTLE OTHER BODIES. WHAT A NOURISHMENT THIS WAS.',
+    author: 'Lindsay',
+    link: 'The Class for Light Impact with Mallory',
+    linkUrl: '#',
+  },
+  {
+    text: 'THANK YOU MALLORY, YOU ELEGANT AND SINCERE SOUL, FOR MAKING ME FEEL ENTITLED TO GIVE VOICE TO THESE NUANCES, WHILE PUTTING THE SPOTLIGHT WHERE IT IS HONEST TO ORIENT. PLEASE, TAKE THIS CLASS WHENEVER YOU FEEL ANGRY, SAD OR, OF COURSE, GRATEFUL. MALLORY&apos;S LESSONS ARE NEVER BANAL OR OBVIOUS, AND FOR SURE, SHE&apos;S ALWAYS IN OUR LIST OF GRATITUDE.',
+    author: 'Chiara',
+    link: 'The Class for Gratitude with Mallory',
+    linkUrl: '#',
   },
 ];
+
+const HeroBlock = () => (
+  <section className={styles.heroBlockRef}>
+    <div className={styles.heroInner}>
+      <div className={styles.heroStatusRef}>ЙОГА • МЕДИТАЦИИ • КАРТИНЫ</div>
+      <h1 className={styles.heroNameRef}>Екатерина Благоева</h1>
+      <div className={styles.heroIcons}>
+        <a href="#" aria-label="Telegram"><FaTelegramPlane /></a>
+        <a href="#" aria-label="WhatsApp"><FaWhatsapp /></a>
+      </div>
+    </div>
+  </section>
+);
+
+const AboutBlock = () => (
+  <section className={styles.aboutBlockRef}>
+    <div className={styles.aboutImgWrap}>
+      <img src="/photos/12.jpg" alt="Mallory Meeks" className={styles.aboutImg} />
+    </div>
+    <div className={styles.aboutTextWrap}>
+      <div className={styles.aboutText}>
+        Екатерина Благоева (Графова), духовное имя Nadaroopa dasi - сертифицированный преподаватель Федерации Йоги России по направлению Хатха-йога (YTTC-300).<br />
+        Преподаватель кундалини йоги, йога-нидры и медитации. Ведущая звуковой медитации ОМ-чантинг. Художник. Музыкант.
+      </div>
+    </div>
+  </section>
+);
+
+const AboutBlock2 = () => (
+  <section className={styles.aboutBlockRef}>
+    <div className={styles.aboutTextWrap2}>
+      <div className={styles.aboutText2}>
+        Проводит сеансы гвоздетерапии с применением знаний и навыков психологии. Организатор и ведущая ретритных трансформационных авторских программ, он-лайн курсов по наули-крии, медитации, здоровая спина и красивая осанка. Стаж преподавание с 2018 года (6 лет).
+      </div>
+    </div>
+    <div className={styles.aboutImgWrap2}>
+      <img src="/photos/7.jpg" alt="Mallory Meeks" className={styles.aboutImg2} />
+    </div>
+  </section>
+);
+
+const InfoBlock = () => (
+  <section className={styles.infoBlockRef}>
+    <div className={styles.infoLeft}>
+      <div className={styles.spotifyStub}>
+        <img src="/photos/10.jpg" alt="Mallory Meeks Vibe" className={styles.spotifyImg} />
+      </div>
+    </div>
+    <div className={styles.infoRight}>
+      <div className={styles.infoTitle}>КАКИЕ МЕТОДЫ Я ИСПОЛЬЗУЮ</div>
+      <div className={styles.infoItem}><b>Influences</b><br />Kindness, subtle displays of human emotion, music, silence, literature, poetry, horizons.</div>
+      <div className={styles.infoItem}><b>Training</b><br />Pure Barre, Trauma Training.</div>
+      <div className={styles.infoItem}><b>Tell Us a Secret</b><br />I read about 50 books a year.</div>
+      <div className={styles.infoItem}><b>Share some resonant words</b><br />&quot;We spend so much time trying to wrap our heads around things, when what we need to do is wrap our arms around them instead.&quot;<br />- David Carr</div>
+    </div>
+  </section>
+);
+
+const ReviewsSlider = () => {
+  const [idx, setIdx] = useState(0);
+  const prev = () => setIdx((i) => (i === 0 ? reviewsSlider.length - 1 : i - 1));
+  const next = () => setIdx((i) => (i === reviewsSlider.length - 1 ? 0 : i + 1));
+  const review = reviewsSlider[idx];
+  return (
+    <section className={styles.sliderBlock}>
+      <button className={styles.sliderArrow} onClick={prev} aria-label="Предыдущий отзыв">&#60;</button>
+      <div className={styles.sliderContent}>
+        <div className={styles.sliderText}>&ldquo;{review.text}&rdquo;</div>
+        <div className={styles.sliderAuthor}>- {review.author}</div>
+        <a href={review.linkUrl} className={styles.sliderLink}>{review.link}</a>
+      </div>
+      <button className={styles.sliderArrow} onClick={next} aria-label="Следующий отзыв">&#62;</button>
+      <div className={styles.sliderBtns}>
+        <button className={styles.sliderBtnBlack}>Move with Mallory Digitally</button>
+        <button className={styles.sliderBtnBlack}>Move with Mallory in NYC</button>
+      </div>
+    </section>
+  );
+};
 
 const TeacherPage = () => {
   return (
     <div className={styles.teacherPage}>
-      {/* HERO */}
-      <section className={styles.heroBlock}>
-        <div className={styles.heroContent}>
-          <div>
-            <h1 className={styles.heroName}>Екатерина Благоева (Nadaroopa dasi)</h1>
-            <div className={styles.heroStatus}>Сертифицированный преподаватель Федерации Йоги России (YTTC-300), художник, музыкант</div>
-            <p className={styles.heroDesc}>
-              Преподаю хатха-йогу, кундалини, йога-нидру, медитацию, гвоздетерапию. Организую ретриты, авторские программы и онлайн-курсы. Стаж преподавания — 6 лет.
-            </p>
-            <button className={styles.ctaBtn} onClick={() => window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})}>Задать вопрос</button>
-          </div>
-          <div className={styles.heroImgWrap}>
-            <Image src="/teacher-placeholder.jpg" alt="Екатерина Благоева" width={320} height={420} className={styles.heroImg} />
-          </div>
-        </div>
-      </section>
-
-      {/* О себе */}
-      <section className={styles.bioBlock} id="about">
-        <h2>О себе</h2>
-        <p>
-          Екатерина Благоева (Графова), духовное имя Nadaroopa dasi — сертифицированный преподаватель Федерации Йоги России по направлению Хатха-йога (YTTC-300). Преподаватель кундалини йоги, йога-нидры и медитации. Ведущая звуковой медитации ОМ-чантинг. Художник. Музыкант.
-          <br/><br/>
-          Проводит сеансы гвоздетерапии с применением знаний и навыков психологии. Организатор и ведущая ретритных трансформационных авторских программ, онлайн-курсов по наули-крии, медитации, здоровая спина и красивая осанка. Стаж преподавания с 2018 года (6 лет).
-          <br/><br/>
-          Екатерина сотрудничает с Департаментом спорта России, 3 года является постоянным топ-преподавателем проекта «Спортивные выходные». Проводила практики йоги в рамках Московского урбанистического форума, международных выставок и форумов.
-        </p>
-      </section>
-
-      {/* Кому подойдут практики */}
-      <section className={styles.infoBlockReverse} id="for-whom">
-        <div className={styles.infoImg}>
-          <Image src="/photos/7.jpg" alt="Кому подойдут практики" width={800} height={600} />
-        </div>
-        <div className={styles.infoText}>
-          <h2>Кому подойдут практики?</h2>
-          <ul>
-            <li>Кто хочет встать на путь самопознания или уже на этом пути</li>
-            <li>Отношения, выход из негативных сценариев, улучшение качества жизни</li>
-            <li>Поиск предназначения, новые цели, раскрытие талантов</li>
-            <li>Преодоление апатии, поиск смысла, эмоциональное восстановление</li>
-          </ul>
-          <h3>Примеры запросов:</h3>
-          <ul>
-            <li>Отношения, негативные сценарии, улучшение текущих отношений</li>
-            <li>Достижение «потолка», поиск нового пути</li>
-            <li>Определение предназначения, поиск радости</li>
-            <li>Работа с эмоциональными блоками, вдохновение</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* Методы и подход */}
-      <section className={styles.infoBlock} id="methods">
-        <div className={styles.infoText}>
-          <h2>Методы и подход</h2>
-          <ul>
-            <li>Индивидуальный подбор программы</li>
-            <li>Кундалини-йога, хатха-йога, техники работы с подсознанием, НЛП</li>
-            <li>Звукотерапия, медитации, гвоздестояние</li>
-            <li>Рекомендации и поддержка после ретрита</li>
-          </ul>
-        </div>
-        <div className={styles.infoImg}>
-          <Image src="/photos/7.jpg" alt="Методы и подход" width={800} height={600} />
-        </div>
-      </section>
-
-      {/* Практики и программы */}
-      <section className={styles.infoBlock} id="programs">
-        <div className={styles.infoText}>
-          <h2>Практики и программы</h2>
-          <ul>
-            <li>Индивидуальный ретрит (авторская программа, 2-3 часа, стоимость 15 000 руб.)</li>
-            <li>Хатха-йога (индивидуальные занятия, персональная настройка, работа с осанкой, дыханием, гибкостью)</li>
-            <li>Кундалини-йога, йога-нидра, медитация, гвоздетерапия</li>
-            <li>Звукотерапия 432 Гц, ОМ-чантинг</li>
-            <li>Онлайн-курсы: наули-крия, медитация, здоровая спина</li>
-          </ul>
-        </div>
-        <div className={styles.infoImg}>
-          <Image src="/photos/7.jpg" alt="Практики и программы" width={800} height={600} />
-        </div>
-      </section>
-
-      {/* Результаты и преимущества */}
-      <section className={styles.infoBlockReverse} id="results">
-        <div className={styles.infoImg}>
-          <Image src="/photos/7.jpg" alt="Результаты и преимущества" width={800} height={600} />
-        </div>
-        <div className={styles.infoText}>
-          <h2>Результаты и преимущества</h2>
-          <ul>
-            <li>Глубокое расслабление, снижение стресса</li>
-            <li>Углубление духовной практики, осознанность</li>
-            <li>Новые навыки, личностный рост, внутренний покой</li>
-            <li>Физическое здоровье, здоровое питание</li>
-            <li>Социальные связи, поддержка сообщества</li>
-            <li>Творческое вдохновение, эмоциональное очищение</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* О себе — личное */}
-      <section className={styles.personalBlock}>
-        <h2>О себе — личное</h2>
-        <p>
-          В йогу пришла более 9 лет назад, на собственном опыте знаю, как техники йоги трансформируют сознание и жизнь. Моя личная практика включает кундалини, хатха-йогу, гвоздестояние, медитацию. Посещаю семинары, ретриты, мастер-классы, постоянно развиваюсь. Вдохновляют искусство, живопись, литература, природа, преподавание и обратная связь от учеников.
-        </p>
-      </section>
-
-      {/* Отзывы */}
-      <section className={styles.reviews} id="reviews">
-        <h2>Отзывы учеников</h2>
-        <div className={styles.reviewsGrid}>
-          {reviews.map((review, idx) => (
-            <div className={styles.reviewCard} key={idx}>
-              <p className={styles.reviewText}>«{review.text}»</p>
-              <span className={styles.reviewAuthor}>— {review.name}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+      <HeroBlock />
+      <AboutBlock />
+      <AboutBlock2 />
+      <InfoBlock />
+      <ReviewsSlider />
     </div>
   );
 };
