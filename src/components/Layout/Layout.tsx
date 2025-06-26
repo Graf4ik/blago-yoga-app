@@ -1,7 +1,7 @@
 import Header from '@/components/Header/Header';
 import { FC, ReactNode } from 'react';
 import "@/assets/styles/globals.scss";
-import styles from './layout.module.scss';
+import styles from './Layout.module.scss';
 import Footer from '../Footer/Footer';
 
 type LayoutProps = {
