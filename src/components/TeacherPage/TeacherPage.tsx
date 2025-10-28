@@ -4,8 +4,6 @@ import React, { useState } from 'react';
 import { FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
 import styles from './TeacherPage.module.scss';
 
-
-
 const reviewsSlider = [
   {
     text: 'THIS WAS AN EXQUISITE PRACTICE, MALLORY! GENTLE, POWERFUL, AND CHALLENGING. IT FELT LIKE A REAL BALM FOR A STRESSFUL AND UNCERTAIN WEEK. I PARTICULARLY LOVED THE AB WORK!',
@@ -28,9 +26,9 @@ const reviewsSlider = [
 ];
 
 const HeroBlock = () => (
-  <section className={styles.heroBlockRef}>
+  <section className={styles.heroContent}>
     <div className={styles.heroInner}>
-      <div className={styles.heroStatusRef}>ЙОГА • МЕДИТАЦИИ • КАРТИНЫ</div>
+      <div className={styles.heroStatusRef}>ЙОГА • МЕДИТАЦИИ • КАРТИНЫ • МУЗЫКА</div>
       <h1 className={styles.heroNameRef}>Екатерина Благоева</h1>
       <div className={styles.heroIcons}>
         <a href="#" aria-label="Telegram"><FaTelegramPlane /></a>
@@ -41,7 +39,7 @@ const HeroBlock = () => (
 );
 
 const AboutBlock = () => (
-  <section className={styles.aboutBlockRef}>
+  <section className={styles.aboutContext}>
     <div className={styles.aboutImgWrap}>
       <img src="/photos/12.jpg" alt="Mallory Meeks" className={styles.aboutImg} />
     </div>
@@ -55,20 +53,20 @@ const AboutBlock = () => (
 );
 
 const AboutBlock2 = () => (
-  <section className={styles.aboutBlockRef}>
-    <div className={styles.aboutTextWrap2}>
-      <div className={styles.aboutText2}>
+  <section className={styles.aboutContext}>
+    <div className={styles.aboutTextWrap}>
+      <div className={styles.aboutText}>
         Проводит сеансы гвоздетерапии с применением знаний и навыков психологии. Организатор и ведущая ретритных трансформационных авторских программ, он-лайн курсов по наули-крии, медитации, здоровая спина и красивая осанка. Стаж преподавание с 2018 года (6 лет).
       </div>
     </div>
-    <div className={styles.aboutImgWrap2}>
-      <img src="/photos/7.jpg" alt="Mallory Meeks" className={styles.aboutImg2} />
+    <div className={styles.aboutImgWrap}>
+      <img src="/photos/7.jpg" alt="Mallory Meeks" className={styles.aboutImg} />
     </div>
   </section>
 );
 
 const InfoBlock = () => (
-  <section className={styles.infoBlockRef}>
+  <section className={styles.infoContent}>
     <div className={styles.infoLeft}>
       <div className={styles.spotifyStub}>
         <img src="/photos/10.jpg" alt="Mallory Meeks Vibe" className={styles.spotifyImg} />
