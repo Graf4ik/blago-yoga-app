@@ -7,6 +7,7 @@ import { AboutBlock } from "@/components/MainPage/AboutBlock/AboutBlock";
 import { InfoBlock } from "@/components/MainPage/InfoBlock/InfoBlock";
 import { ReviewsSlider } from "@/components/MainPage/ReviewsSlider/ReviewsSlider";
 import { ServiceBlock } from "@/components/MainPage/ServiceBlock/ServiceBlock";
+import { PracticeBlock } from "@/components/MainPage/PracticeBlock/PracticeBlock";
 
 const MainPage = () => {
   return (
@@ -14,6 +15,7 @@ const MainPage = () => {
       <HeroBlock />
       <AboutBlock />
       <InfoBlock />
+      <PracticeBlock />
       <ServiceBlock />
       <ReviewsSlider />
     </div>

@@ -21,36 +21,10 @@
 
     .aboutImg {
       width: 100%;
-      height: 100%;
       object-fit: cover;
-      max-width: none;
-      min-height: 400px;
       display: block;
       margin: 0;
       padding: 0;
-    }
-  }
-
-  .accordionWrap {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 2rem;
-    background: #fff;
-
-    .accordionHeader {
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
-
-    .accordionContent {
-      font-size: 1rem;
-      padding: 0.5rem;
-      background: #fff;
-      border-left: 3px solid #1a73e8;
-      margin-bottom: 1rem;
-      border-radius: 0 8px 8px 0;
     }
   }
 
@@ -58,20 +32,22 @@
     flex: 1 1 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
     background: #fff;
     padding: 0 3vw;
 
     .aboutText {
-      font-family: 'Cinzel', 'Times New Roman', serif;
-      font-size: 2rem;
+      font-size: 1.4rem;
+      font-family: var(--font-geist-sans), sans-serif;
       color: #181818;
       text-align: center;
-      line-height: 1.5;
       letter-spacing: 0.04em;
       font-weight: 400;
-      max-width: 520px;
+      max-width: 560px;
       margin: 0 auto;
+
+      p {
+        margin-bottom: 1.2rem;
+      }
     }
   }
 }
