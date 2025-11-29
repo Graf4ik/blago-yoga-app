@@ -1,0 +1,44 @@
+.serviceBlock {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+
+  .serviceTitle {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+
+  .serviceTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    thead {
+      background-color: #eee;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    tbody tr:hover {
+      background-color: #f0f0f0;
+    }
+
+    th {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    td {
+      font-size: 14px;
+      color: #333;
+    }
+  }
+}

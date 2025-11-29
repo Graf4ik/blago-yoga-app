@@ -1,10 +1,10 @@
 import Layout from "../components/Layout/Layout";
-import TeacherPage from "../components/TeacherPage/TeacherPage";
+import MainPage from "@/components/MainPage/MainPage";
 
 export default function Home() {
   return (
     <Layout>
-      <TeacherPage />
+      <MainPage />
     </Layout>
   );
 }

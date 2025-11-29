@@ -1,0 +1,90 @@
+.heroContent {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  min-width: 100vw;
+  min-height: 420px;
+  background: #232325;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0 60px 0;
+  box-sizing: border-box;
+
+  .heroInner {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .heroStatusRef {
+      color: #A79E94;
+      font-size: 1.18rem;
+      font-family: 'Montserrat', 'Arial', sans-serif;
+      letter-spacing: 0.12em;
+      margin-bottom: 2.2rem;
+      font-weight: 400;
+    }
+
+    .heroNameRef {
+      color: #A79E94;
+      font-family: 'Cinzel', 'Times New Roman', serif;
+      font-size: 4.2rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .heroIcons {
+      display: flex;
+      gap: 2.2rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .heroIcons a {
+      color: #A79E94;
+      font-size: 2.1rem;
+      transition: color 0.18s;
+
+      &:hover {
+        color: #b8a47a;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .teacherPage {
+    .heroContent {
+      min-height: 220px;
+      padding: 24px 0 18px 0;
+
+      .heroInner {
+        .heroStatusRef {
+          font-size: 0.85rem;
+          margin-bottom: 0.7rem;
+        }
+
+        .heroNameRef {
+          font-size: 1.3rem;
+          margin-bottom: 0.7rem;
+        }
+
+        .heroIcons {
+          gap: 1.1rem;
+
+          a {
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+}
