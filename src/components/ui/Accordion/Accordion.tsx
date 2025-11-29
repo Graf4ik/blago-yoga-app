@@ -3,7 +3,16 @@
 import { useState, useRef } from "react";
 import styles from "./Accordion.module.scss";
 
-export const Accordion = ({ items }) => {
+export interface AccordionItem {
+    header: string;
+    content: string[];
+}
+
+interface AccordionProps {
+    items: AccordionItem[];
+}
+
+export const Accordion = ({ items }: AccordionProps) => {
     return (
         <div className={styles.accordion}>
             {items.map((item, i) => (
@@ -13,7 +22,7 @@ export const Accordion = ({ items }) => {
     );
 };
 
-const AccordionItem = ({ header, content }) => {
+const AccordionItem = ({ header, content }: AccordionItem) => {
     const [open, setOpen] = useState(false);
     const wrapperRef = useRef<HTMLDivElement>(null);
 
