@@ -1,6 +1,6 @@
 .infoContent {
   width: 100vw;
-  min-height: 520px;
+  min-height: 650px;
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -9,7 +9,7 @@
   background: none;
   padding: 0;
 
-  .infoLeft {
+  .infoImgWrap {
     flex: 1 1 50%;
     background: #a89f92;
     display: flex;
@@ -18,7 +18,7 @@
     min-height: 400px;
     padding: 0 0 0 0;
 
-    .spotifyStub {
+    .infoStub {
       width: 90%;
       max-width: 520px;
       min-height: 320px;
@@ -30,7 +30,7 @@
       box-shadow: 0 4px 24px rgba(26, 35, 126, 0.08);
       margin: 2.5rem 0;
 
-      .spotifyImg {
+      .infoImg {
         width: 250px;
         height: 250px;
         object-fit: cover;
@@ -39,39 +39,46 @@
     }
   }
 
-  .infoRight {
+  .infoTextWrap {
     flex: 1 1 50%;
-    background: #fff;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 4rem 4vw 4rem 4vw;
-    min-height: 440px;
-    position: relative;
-    z-index: 1;
+    align-items: center;
+    background: #fff;
+    padding: 0 3vw;
 
-    .infoTitle {
-      font-family: 'Montserrat', 'Arial', sans-serif;
-      font-size: 1.15rem;
+    .infoText {
+      font-size: 1.4rem;
+      font-family: var(--font-geist-sans), sans-serif;
       color: #181818;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      margin-bottom: 2.2rem;
-      text-transform: uppercase;
-    }
+      letter-spacing: 0.04em;
 
-    .infoItem {
-      font-family: 'Montserrat', 'Arial', sans-serif;
-      font-size: 1.18rem;
-      color: #222;
-      margin-bottom: 2rem;
-      line-height: 1.6;
+      p {
+        margin-bottom: 1.5rem;
+      }
 
-      b {
-        font-weight: 600;
-        font-size: 1.08em;
-        color: #181818;
+      ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+
+        li {
+          position: relative;
+          padding-left: 1.5rem;
+          font-size: 1.2rem;
+          color: #181818;
+
+          &::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #181818;
+            font-size: 1.6rem;
+            line-height: 1;
+          }
+        }
       }
     }
   }
@@ -82,7 +89,7 @@
     flex-direction: column;
     min-height: unset;
 
-    .infoLeft {
+    .infoImgWrap {
       flex: unset;
       min-height: 220px;
       max-height: 420px;
@@ -90,21 +97,31 @@
       padding: 0;
     }
 
-    .infoRight {
+    .infoTextWrap {
       flex: unset;
-      min-height: 220px;
-      max-height: 420px;
-      width: 100%;
-      padding: 2rem 1rem 2rem 1rem;
+      padding: 2rem 1rem;
+      margin-left: 2%;
 
-      .infoTitle {
-        margin-bottom: 1.2rem;
-        font-size: 1rem;
-      }
+      .infoText {
+        font-size: 1.2rem;
+        text-align: left;
 
-      .infoItem {
-        font-size: 1rem;
-        margin-bottom: 1.1rem;
+        p {
+          margin-bottom: 1rem;
+        }
+
+        ul {
+          gap: 0.15rem;
+
+          li {
+            font-size: 1rem;
+            padding-left: 1.2rem;
+
+            &::before {
+              font-size: 1.4rem;
+            }
+          }
+        }
       }
     }
   }
@@ -114,20 +131,14 @@
   .infoContent {
     flex-direction: column;
     min-height: unset;
-    width: 100vw;
-    padding: 0;
 
-    .infoLeft {
+    .infoImgWrap {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 120px;
-      max-height: unset;
-      width: 100vw;
       padding: 0;
-      box-sizing: border-box;
 
-      .spotifyStub {
+      .infoStub {
         .infoImg {
           min-height: 80px;
           max-width: 90vw;
@@ -136,25 +147,32 @@
       }
     }
 
-    .infoRight {
+    .infoTextWrap {
+      flex: unset;
       min-height: 120px;
-      max-height: unset;
-      width: 100vw;
-      box-sizing: border-box;
       padding: 0.7rem 0.7rem;
-      text-align: center;
 
-      .infoTitle {
+      .infoText {
         font-size: 0.95rem;
-        margin-bottom: 0.5rem;
-        margin-top: 0.7rem;
-        text-align: center;
-      }
 
-      .infoItem {
-        font-size: 0.85rem;
-        margin-bottom: 0.5rem;
-        text-align: left;
+        p {
+          margin-bottom: 0.8rem;
+        }
+
+        ul {
+          gap: 0.1rem;
+
+          li {
+            font-size: 0.9rem;
+            padding-left: 1rem;
+
+            &::before {
+              font-size: 1.2rem;
+              left: 0;
+              top: 0;
+            }
+          }
+        }
       }
     }
   }

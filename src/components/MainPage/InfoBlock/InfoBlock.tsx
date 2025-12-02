@@ -3,17 +3,33 @@ import React from "react";
 
 export const InfoBlock = () => (
     <section className={styles.infoContent}>
-        <div className={styles.infoLeft}>
-            <div className={styles.spotifyStub}>
-                <img src="/photos/10.jpg" alt="Mallory Meeks Vibe" className={styles.spotifyImg} />
+        <div className={styles.infoImgWrap}>
+            <div className={styles.infoStub}>
+                <img src="/photos/4.jpg" alt="..." className={styles.infoImg}/>
             </div>
         </div>
-        <div className={styles.infoRight}>
-            <div className={styles.infoTitle}>КАКИЕ МЕТОДЫ Я ИСПОЛЬЗУЮ</div>
-            <div className={styles.infoItem}><b>Influences</b><br />Kindness, subtle displays of human emotion, music, silence, literature, poetry, horizons.</div>
-            <div className={styles.infoItem}><b>Training</b><br />Pure Barre, Trauma Training.</div>
-            <div className={styles.infoItem}><b>Tell Us a Secret</b><br />I read about 50 books a year.</div>
-            <div className={styles.infoItem}><b>Share some resonant words</b><br />&quot;We spend so much time trying to wrap our heads around things, when what we need to do is wrap our arms around them instead.&quot;<br />- David Carr</div>
+        <div className={styles.infoTextWrap}>
+            <div className={styles.infoText}>
+                <p>
+                    <strong>От Осознания — к Воплощению</strong>
+                </p>
+                <p>
+                    Философия — это основа, но реальные изменения происходят в действии. Мои интегративные практики —
+                    это не
+                    теория, а точные инструменты, которые помогут вам:
+                </p>
+                <ul>
+                    <li><strong>ПЕРЕЙТИ</strong> от неясных желаний — к ясному намерению и плану.</li>
+                    <li><strong>ПРЕОБРАЗИТЬ</strong> внутренние ограничения — в источник силы и ресурс.</li>
+                    <li><strong>НАУЧИТЬСЯ</strong> не просто мечтать, а становиться творцом каждой сферы своей жизни: от
+                        здоровья и отношений — до финансов и самореализации.
+                    </li>
+                </ul>
+                <p>
+                    Следующий шаг — выбрать формат нашей работы, который подходит именно вам. Изучите мои услуги ниже —
+                    каждая из них является частью этой целостной системы преображения.
+                </p>
+            </div>
         </div>
     </section>
 );

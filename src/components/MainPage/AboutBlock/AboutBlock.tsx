@@ -41,10 +41,6 @@ export const AboutBlock = () => (
                         Я поняла, что это не три разных увлечения, а <strong>три ключа к единой цели: пробуждению творца в каждом из нас.</strong>
                     </p>
                     <p>
-                        Моя личная формула, рассчитанная по <em>Матрице Судьбы</em>, подтвердила это: я — <strong>Воплощенная Воля (Маг)</strong> с двойной силой.
-                        Это означает, что моя задача и мой дар — не следовать готовым путям, а проявлять новые реальности и помогать в этом другим.
-                    </p>
-                    <p>
                         <strong>BlagoYogaArt</strong> — это материализованное намерение моего «Я». Это не проект в классическом понимании, а живая система, где:
                     </p>
                     <ul>
@@ -59,7 +55,7 @@ export const AboutBlock = () => (
                 </div>
             </div>
             <div className={styles.aboutImgWrap}>
-                <img src="/photos/7.jpg" alt="Практика" className={styles.aboutImg} />
+                <img src="/photos/2.jpg" alt="Практика" className={styles.aboutImg} />
             </div>
         </section>
     </>
