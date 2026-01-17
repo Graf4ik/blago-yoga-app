@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from "./ServiceBlock.module.scss";
+import { AccordionItem } from "@/components/ui/Accordion/Accordion";
 
-export const accordionItems = [
+export const accordionItems: AccordionItem[] = [
     {
         header: "Персональные занятия",
         content: (

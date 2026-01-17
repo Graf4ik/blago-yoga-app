@@ -5,7 +5,7 @@ import styles from "./Accordion.module.scss";
 
 export interface AccordionItem {
     header: string;
-    content: string[];
+    content: React.ReactNode;
 }
 
 interface AccordionProps {
