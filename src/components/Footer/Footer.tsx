@@ -28,44 +28,31 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
-        <div className={styles.footerLogo}>
-          {/* SVG круг-логотип */}
-          <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="45" cy="45" r="36" stroke="#fff" strokeWidth="4" fill="none" />
-            <line x1="18" y1="45" x2="72" y2="45" stroke="#fff" strokeWidth="3" />
-          </svg>
-        </div>
-        <div className={styles.footerLinks}>
-          <div>
-            <div className={styles.footerColTitle}></div>
-            <a href="#">Digital Studio</a>
-            <a href="#">NYC Studio</a>
-            <button className={styles.contactBtn} onClick={() => setSidebarOpen(true)}>Связаться</button>
-            <a href="#">The Method</a>
-            <a href="#">The Teachers</a>
-            <a href="#">Retreatments</a>
+          <div className={styles.footerLogo}>
+              <h3 className={styles.title}>BLAGO YOGA ART</h3>
+              <div className={styles.footerSocials}>
+                  <a href="#" aria-label="WhatsApp"><FaWhatsapp size={22}/></a>
+                  <a href="#" aria-label="Telegram"><FaTelegramPlane size={22}/></a>
+                  <a href="tel:+79991234567" aria-label="Телефон"><FaPhone size={22}/></a>
+              </div>
           </div>
-          <div>
-            <a href="#">Contact Us</a>
-            <a href="#">Code of Conduct</a>
-          </div>
-          <div className={styles.footerSubscribe}>
-            <span>Подпишись на группу в телеграмме </span>
+          <div className={styles.footerLinks}>
+              <div>
+                  <div className={styles.footerColTitle}></div>
+                  <a href="#">Главная</a>
+                  <a href="#">Мои услуги</a>
+                  <a href="#">Мои отзывы</a>
+                  <button className={styles.contactBtn} onClick={() => setSidebarOpen(true)}>Связаться</button>
           </div>
         </div>
       </div>
       <div className={styles.footerBottom}>
         <span className={styles.copyright}>© 2025 Все права защищены.</span>
-        <div className={styles.footerSocials}>
-          <a href="#" aria-label="WhatsApp"><FaWhatsapp size={22} /></a>
-          <a href="#" aria-label="Telegram"><FaTelegramPlane size={22} /></a>
-          <a href="tel:+79991234567" aria-label="Телефон"><FaPhone size={22} /></a>
-        </div>
       </div>
-      <ContactSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-      <ScrollTopBtn />
+      <ContactSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)}/>
+      <ScrollTopBtn/>
     </footer>
   );
 };
 
-export default Footer; 
+export default Footer;

@@ -11,31 +11,18 @@
 
   .infoImgWrap {
     flex: 1 1 50%;
-    background: #a89f92;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 400px;
-    padding: 0 0 0 0;
+    padding: 0;
 
-    .infoStub {
-      width: 90%;
-      max-width: 520px;
-      min-height: 320px;
-      background: #232325;
-      border-radius: 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 24px rgba(26, 35, 126, 0.08);
-      margin: 2.5rem 0;
-
-      .infoImg {
-        width: 250px;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 0.7rem;
-      }
+    .infoImg {
+      width: 670px;
+      height: 650px;
+      object-fit: cover;
+      display: block;
+      margin: 0;
+      padding: 0;
     }
   }
 

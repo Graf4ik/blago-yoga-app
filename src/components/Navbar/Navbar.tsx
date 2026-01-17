@@ -12,7 +12,6 @@ const Navbar: FC = () => {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <div className={styles.navContent}>
-          {/* Логотип */}
           <div className={styles.logo}>
             <img src="/logo.png" className={styles.logoImg} />
           </div>
@@ -23,7 +22,6 @@ const Navbar: FC = () => {
             {/*<button className={styles.studioBtn}>Связаться</button>*/}
           </div>
 
-          {/* Бургер-меню */}
           <div className={styles.burgerMenu}>
             <button onClick={openMenu} className={styles.menuButton} aria-label="Открыть меню">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -34,7 +32,6 @@ const Navbar: FC = () => {
           </div>
         </div>
       </div>
-      {/* Выезжающее меню */}
       {isActive && (
         <div className={styles.sideMenu}>
           <button className={styles.closeBtn} onClick={closeMenu} aria-label="Закрыть меню">×</button>

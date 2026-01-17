@@ -4,9 +4,7 @@ import React from "react";
 export const InfoBlock = () => (
     <section className={styles.infoContent}>
         <div className={styles.infoImgWrap}>
-            <div className={styles.infoStub}>
-                <img src="/photos/4.jpg" alt="..." className={styles.infoImg}/>
-            </div>
+            <img src="/photos/4.jpg" alt="Екатерина Благоева" className={styles.infoImg}/>
         </div>
         <div className={styles.infoTextWrap}>
             <div className={styles.infoText}>
