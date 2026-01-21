@@ -10,7 +10,7 @@ import { ReviewGallery } from "@/components/MainPage/ReviewsGallery/ReviewsGalle
 
 const MainPage = () => {
   return (
-    <div className={styles.teacherPage}>
+    <div className={styles.mainPage}>
       <HeroBlock />
       <AboutBlock />
       <InfoBlock />

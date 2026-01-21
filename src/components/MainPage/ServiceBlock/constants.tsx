@@ -4,14 +4,27 @@ import { AccordionItem } from "@/components/ui/Accordion/Accordion";
 
 export const accordionItems: AccordionItem[] = [
     {
-        header: "Персональные занятия",
+        header: "Персональные занятия офлайн или онлайн",
         content: (
             <>
                 <p className={styles.description}>
-                    Индивидуальные занятия по Хатха-йоге, кундалини-йоге и медитации.
+                    Представьте, что вы чувствуете себя легко, свободно и наполнено каждый день. Ваше тело становится сильным и гибким, а ум — спокойным и ясным. Это не мечта, а реальность, которую я помогу вам достичь с помощью индивидуальных занятий йогой, созданных специально для вас!
                 </p>
-                <p className={styles.price}>2000 ₽ / занятие</p>
-                <p className={styles.subscriptionPrice}>1800 ₽ / занятие по абонементу</p>
+                <p className={styles.subtitle}>Почему именно я?</p>
+                <ul className={styles.list}>
+                    <li><strong>Индивидуальный подход:</strong> составлю программу с учетом ваших целей, болей и пожеланий.</li>
+                    <li><strong>Глубокие знания:</strong> анатомия, психология, биомеханика для максимального результата.</li>
+                    <li><strong>Работа на всех уровнях:</strong> физическое, эмоциональное и психическое состояние.</li>
+                    <li><strong>Эмпатия и целительские способности:</strong> точное понимание ваших потребностей.</li>
+                </ul>
+                <p className={styles.subtitle}>Стоимость</p>
+                <p className={styles.price}>Разовое занятие: 5000 ₽ / 1 ч 15–30 мин</p>
+                <p className={styles.subscriptionPrice}>Абонементы:</p>
+                <ul className={styles.list}>
+                    <li>4 занятия – 16 000 ₽ (4000 ₽ за занятие)</li>
+                    <li>6 занятий – 22 800 ₽ (3800 ₽ за занятие)</li>
+                    <li>8 занятий – 30 400 ₽ (3800 ₽ за занятие)</li>
+                </ul>
             </>
         ),
     },
@@ -20,22 +33,41 @@ export const accordionItems: AccordionItem[] = [
         content: (
             <>
                 <p className={styles.description}>
-                    Групповые занятия по Хатха-йоге, кундалини-йоге и медитации.
+                    Идеальная практика для гармонии тела и ума из любой точки мира. Каждое занятие включает дыхательные практики, уникальные асаны и глубокую релаксацию под вибрации 432 Гц.
                 </p>
-                <p className={styles.price}>2000 ₽ / занятие</p>
-                <p className={styles.subscriptionPrice}>1700 ₽ / занятие по абонементу</p>
+                <p className={styles.subtitle}>Почему выбирают эти занятия?</p>
+                <ul className={styles.list}>
+                    <li>Доступность 24/7 — подключение из любого места.</li>
+                    <li>Эффект уже после первого занятия.</li>
+                    <li>Профессиональный и чуткий подход для всех уровней.</li>
+                    <li>Экономия времени и средств — нет необходимости ехать.</li>
+                    <li>Международная оплата: быстро и удобно.</li>
+                </ul>
+                <p className={styles.subtitle}>Стоимость и пакеты</p>
+                <ul className={styles.list}>
+                    <li>Урок-знакомство — бесплатно</li>
+                    <li>Разовое занятие — 950 ₽ / 10 €</li>
+                    <li>Пакет «Регулярность» — 4 занятия 3 500 ₽ / 35 €</li>
+                    <li>Пакет «Осознанная практика» — 6 занятий 5 000 ₽ / 50 €</li>
+                </ul>
+                <p className={styles.note}>Длительность урока — 1 час 15 минут. Прямой эфир с возможностью задать вопросы или запись на 24 часа.</p>
             </>
         ),
     },
     {
-        header: "ОМ-чантинг и sound healing",
+        header: "ОМ-чантинг и саунд-хилинг",
         content: (
             <>
                 <p className={styles.description}>
-                    ОМ-чантинг и практики работы с голосом для снятия стресса и гармонизации энергии.
+                    Древние практики ом-чантига и саунд-хилинга для исцеления, гармонизации и снятия стресса. Вибрации 432 Гц, работа с дыханием, голосом и живыми инструментами.
                 </p>
-                <p className={styles.price}>1500 ₽ / занятие</p>
-                <p className={styles.subscriptionPrice}>1400 ₽ / занятие по абонементу</p>
+                <p className={styles.subtitle}>Что даёт практика?</p>
+                <ul className={styles.list}>
+                    <li>Раскрытие духовного сердца и позитивное мышление.</li>
+                    <li>Тонизация легких и дыхательных мышц.</li>
+                    <li>Стимуляция органов и желез, улучшение кровотока.</li>
+                </ul>
+                <p className={styles.price}>Стоимость: 1500 ₽ / занятие</p>
             </>
         ),
     },
@@ -46,44 +78,7 @@ export const accordionItems: AccordionItem[] = [
                 <p className={styles.description}>
                     Индивидуальный подход с учетом целей, физического и эмоционального состояния.
                 </p>
-                <p className={styles.price}>3000 ₽ / консультация</p>
-                <p className={styles.subscriptionPrice}>2700 ₽ / консультация по абонементу</p>
-            </>
-        ),
-    },
-    {
-        header: "Индивидуальный ретрит",
-        content: (
-            <>
-                <p className={styles.description}>
-                    Индивидуальный подход с учетом целей, физического и эмоционального состояния.
-                </p>
-                <p className={styles.price}>3000 ₽ / консультация</p>
-                <p className={styles.subscriptionPrice}>2700 ₽ / консультация по абонементу</p>
-            </>
-        ),
-    },
-    {
-        header: "Корпоративная йога",
-        content: (
-            <>
-                <p className={styles.description}>
-                    Групповые занятия по Хатха-йоге, кундалини-йоге и медитации.
-                </p>
-                <p className={styles.price}>2000 ₽ / занятие</p>
-                <p className={styles.subscriptionPrice}>1800 ₽ / занятие по абонементу</p>
-            </>
-        ),
-    },
-    {
-        header: "Индивидуальные сессия sound healing и медитации с участием Ivailo Blagoev",
-        content: (
-            <>
-                <p className={styles.description}>
-                    Индивидуальная сессия sound healing и медитации.
-                </p>
-                <p className={styles.price}>2000 ₽ / занятие</p>
-                <p className={styles.subscriptionPrice}>1800 ₽ / занятие по абонементу</p>
+                <p className={styles.price}>Стоимость: 3000 ₽ / консультация</p>
             </>
         ),
     },

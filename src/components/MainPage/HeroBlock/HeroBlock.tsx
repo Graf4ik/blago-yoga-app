@@ -3,7 +3,7 @@ import styles from "./HeroBlock.module.scss"
 import React from "react";
 
 export const HeroBlock = () => (
-    <section className={styles.heroContent}>
+    <section className={styles.heroContent} id="home">
         <div className={styles.heroInner}>
             <div className={styles.heroStatusRef}>ЙОГА • МЕДИТАЦИИ • КАРТИНЫ • МУЗЫКА</div>
             <h1 className={styles.heroNameRef}>Екатерина Благоева</h1>

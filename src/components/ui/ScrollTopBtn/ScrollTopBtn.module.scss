@@ -1,0 +1,40 @@
+.scrollTopBtn {
+  position: fixed;
+  right: 2.5rem;
+  bottom: 2.5rem;
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  box-shadow: 0 4px 16px rgba(184, 164, 122, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: box-shadow 0.2s, transform 0.2s;
+
+  &:hover {
+    box-shadow: 0 8px 24px rgba(184, 164, 122, 0.28);
+    transform: translateY(-4px) scale(1.07);
+  }
+}
+
+@media (max-width: 900px) {
+    .scrollTopBtn {
+      right: 1rem;
+      bottom: 1rem;
+      width: 44px;
+      height: 44px;
+    }
+}
+
+@media (max-width: 600px) {
+    .scrollTopBtn {
+      right: 1rem;
+      bottom: 1rem;
+      width: 44px;
+      height: 44px;
+    }
+}

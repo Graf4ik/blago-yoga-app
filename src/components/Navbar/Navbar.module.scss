@@ -1,15 +1,11 @@
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto 0;
   z-index: 100;
-  background: #232325;
   height: 92px;
+  background: #232325;
   display: flex;
   align-items: center;
-  box-shadow: none;
-  border-bottom: none;
 
   .container {
     width: 100%;
@@ -18,207 +14,66 @@
     padding: 0 40px;
 
     .navContent {
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
-      height: 92px;
+
+      .leftGroup {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
 
       .logo {
-        color: #fff;
-        font-family: 'Cinzel', 'Times New Roman', serif;
-        font-size: 2.2rem;
-        font-weight: 400;
-        letter-spacing: 0.04em;
-        margin-right: 2.5rem;
         user-select: none;
 
         .logoImg {
           width: 95px;
+          display: block;
         }
       }
 
-      .studios {
+      .links {
         display: flex;
-        gap: 1rem;
         align-items: center;
+        gap: 0.8rem;
+        flex-wrap: wrap;
 
-        .studioBtn {
+        .linksBtn {
           background: #232325;
-          color: #fff;
+          color: #a79e94;
           border: none;
           border-radius: 1.5rem;
-          padding: 0.45rem 1.5rem;
-          font-size: 1.05rem;
-          font-weight: 400;
-          letter-spacing: 0.01em;
+          padding: 0.35rem 1rem;
+          font-size: 1rem;
           cursor: pointer;
-          transition: background 0.2s, color 0.2s;
-          outline: none;
-          box-shadow: none;
-          margin: 0;
+          transition: background 0.2s;
+          white-space: nowrap;
 
-          &:hover, &:focus {
+          &:hover,
+          &:focus {
             background: #39393b;
-            color: #fff;
           }
         }
       }
-    }
 
-    .burgerMenu {
-      margin-left: 2.2rem;
-      display: flex;
-      align-items: center;
-
-      .menuButton {
-        background: transparent;
-        border: none;
-        color: #A79E94;
-        padding: 0.5rem;
-        border-radius: 0;
-        cursor: pointer;
+      .burgerMenu {
         display: flex;
         align-items: center;
-        justify-content: center;
-        transition: background 0.2s;
-        &:hover, &:focus {
+
+        .menuButton {
           background: none;
-        }
-      }
-    }
-  }
-
-  .sideMenu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 410px;
-    max-width: 100vw;
-    height: 100vh;
-    background: #d3d1c7;
-    color: #181818;
-    z-index: 2000;
-    box-shadow: 2px 0 32px rgba(0,0,0,0.10);
-    display: flex;
-    flex-direction: column;
-    padding: 2.5rem 2.5rem 1.5rem 2.5rem;
-    animation: slideIn 0.25s cubic-bezier(.4,0,.2,1);
-
-    .closeBtn {
-      position: absolute;
-      top: 1.7rem;
-      right: 2.2rem;
-      background: none;
-      border: none;
-      font-size: 2.2rem;
-      color: #181818;
-      cursor: pointer;
-      z-index: 10;
-      line-height: 1;
-    }
-
-    .menuSection {
-      margin-bottom: 2.2rem;
-
-      .menuTitle {
-        font-family: 'Cinzel', 'Times New Roman', serif;
-        font-size: 1.35rem;
-        font-weight: 600;
-        margin-bottom: 0.7rem;
-        letter-spacing: 0.03em;
-      }
-
-      .menuLink {
-        font-size: 1.15rem;
-        font-family: 'Montserrat', 'Arial', sans-serif;
-        color: #181818;
-        margin-bottom: 0.7rem;
-        cursor: pointer;
-        transition: color 0.18s;
-
-        &:hover {
-          color: #b8a47a;
-        }
-      }
-
-      .menuRow {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 0.7rem;
-        font-size: 1.15rem;
-
-        .bookBtn {
-          background: #181818;
-          color: #fff;
           border: none;
-          border-radius: 1.2rem;
-          padding: 0.18rem 1.1rem;
-          font-size: 0.98rem;
-          font-family: 'Montserrat', 'Arial', sans-serif;
+          color: #a79e94;
+          padding: 0.5rem;
           cursor: pointer;
-          margin-left: 1.2rem;
-          transition: background 0.18s;
-          &:hover {
-            background: #39393b;
-          }
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
-
-      .contactBtn {
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 1.05rem;
-        font-family: 'Montserrat', 'Arial', sans-serif;
-        border-radius: 1.5rem;
-        padding: 0.45rem 1.5rem;
-        margin: 0;
-        cursor: pointer;
-        transition: background 0.2s, color 0.2s;
-        outline: none;
-        box-shadow: none;
-      }
-
-      &:hover, &:focus {
-        background: #39393b;
-        color: #fff;
-        outline: none;
-      }
     }
-
-    .menuDivider {
-      border: none;
-      border-top: 1.5px solid #b8a47a;
-      margin: 1.5rem 0 2rem 0;
-    }
-
-    .menuHelp {
-      margin-top: auto;
-      display: flex;
-      justify-content: flex-start;
-
-      button {
-        background: #c7c6b8;
-        color: #181818;
-        border: none;
-        border-radius: 1.2rem;
-        padding: 0.5rem 1.5rem;
-        font-size: 1rem;
-        font-family: 'Montserrat', 'Arial', sans-serif;
-        font-weight: 600;
-        cursor: pointer;
-        margin-top: 2.5rem;
-        transition: background 0.18s;
-        &:hover { background: #b8a47a; color: #fff; }
-      }
-    }
-  }
-
-  @keyframes slideIn {
-    from { transform: translateX(-100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
   }
 }
 
@@ -230,24 +85,25 @@
       padding: 0 16px;
 
       .navContent {
-        height: 72px;
-
-        .logo {
-          font-size: 1.5rem;
-          margin-right: 1.2rem;
+        .logo .logoImg {
+          width: 72px;
         }
 
-        .studios {
+        .leftGroup {
+          gap: 0.6rem;
+        }
+
+        .links {
           gap: 0.5rem;
 
-          .studioBtn {
+          .linksBtn {
+            padding: 0.3rem 0.8rem;
             font-size: 0.95rem;
-            padding: 0.35rem 1rem;
           }
         }
 
         .burgerMenu {
-          margin-left: 1rem;
+          margin-left: 0.5rem;
         }
       }
     }
@@ -256,14 +112,28 @@
 
 @media (max-width: 600px) {
   .navbar {
-    .sideMenu {
-      width: 100vw;
-      padding: 1.2rem 1rem 1rem 1rem;
+    height: 64px;
 
-      .closeBtn {
-        top: 1.1rem;
-        right: 1.1rem;
-        font-size: 2rem;
+    .container {
+      padding: 0 12px;
+
+      .navContent {
+        .logo .logoImg {
+          width: 60px;
+        }
+
+        .leftGroup {
+          gap: 0.4rem;
+        }
+
+        .links {
+          gap: 0.4rem;
+
+          .linksBtn {
+            padding: 0.25rem 0.6rem;
+            font-size: 0.9rem;
+          }
+        }
       }
     }
   }

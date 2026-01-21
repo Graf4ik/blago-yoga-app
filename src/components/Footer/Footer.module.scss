@@ -2,36 +2,32 @@
   width: 100vw;
   background: #543927;
   color: #fff;
-  padding: 0;
-  margin: 0;
   font-family: 'Montserrat', 'Arial', sans-serif;
 
   .footerContent {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
     justify-content: space-between;
     max-width: 1600px;
     margin: 0 auto;
-    padding: 3.5rem 3vw 2.5rem 3vw;
+    padding: 3.5rem 3vw 2.5rem;
 
     .footerLogo {
-      flex: 0 0 180px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      justify-content: flex-start;
-      margin-right: 7.5rem;
+      margin-bottom: 2rem;
+      margin-right: 2rem;
 
       .title {
         font-size: 2rem;
+        margin-bottom: 1rem;
       }
 
       .footerSocials {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
         gap: 1.2rem;
-        margin-top: 1rem;
 
         a {
           display: flex;
@@ -48,46 +44,36 @@
     }
 
     .footerLinks {
-      flex: 1 1 900px;
       display: flex;
-      flex-direction: row;
-      gap: 4vw;
-      align-items: flex-start;
-      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 3rem;
+      flex: 1 1 auto;
 
       > div {
         display: flex;
         flex-direction: column;
         gap: 0.7rem;
-        min-width: 180px;
-      }
 
-      a {
-        color: #fff;
-        font-size: 1.13rem;
-        text-decoration: none;
-        transition: color 0.18s;
+        a, .contactBtn {
+          color: #fff;
+          font-size: 1.13rem;
+          text-decoration: none;
+          cursor: pointer;
+          transition: color 0.18s;
 
-        &:hover {
-          color: #b8a47a;
+          &:hover,
+          &:focus {
+            color: #b8a47a;
+            outline: none;
+          }
         }
-      }
 
-      .contactBtn {
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 1.13rem;
-        text-align: left;
-        padding: 0;
-        margin: 0;
-        cursor: pointer;
-        transition: color 0.18s;
-
-        &:hover,
-        &:focus {
-          color: #b8a47a;
-          outline: none;
+        .contactBtn {
+          background: none;
+          border: none;
+          padding: 0;
+          margin: 0;
+          text-align: left;
         }
       }
     }
@@ -95,161 +81,67 @@
 
   .footerBottom {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     max-width: 1600px;
     margin: 0 auto;
     padding: 1.2rem 3vw;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 
     .copyright {
-      color: #fff;
       font-size: 1rem;
       opacity: 0.85;
     }
   }
 
-  .scrollTopBtn {
-    position: fixed;
-    right: 2.5rem;
-    bottom: 2.5rem;
-    width: 56px;
-    height: 56px;
-    border: none;
-    border-radius: 50%;
-    background: none;
-    box-shadow: 0 4px 16px rgba(184, 164, 122, 0.18);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1000;
-    transition: box-shadow 0.2s, transform 0.2s;
-
-    &:hover {
-      box-shadow: 0 8px 24px rgba(184, 164, 122, 0.28);
-      transform: translateY(-4px) scale(1.07);
-    }
-  }
-
   @media (max-width: 900px) {
     .footerContent {
-      flex-direction: row-reverse;
+      flex-direction: column;
       align-items: flex-start;
-      justify-content: flex-start;
-      padding: 1rem 0.5rem 0.7rem 0.5rem;
-      gap: 0.7rem;
+      padding: 2rem 2vw;
+      gap: 1.5rem;
 
       .footerLogo {
-        margin-left: auto;
-        margin-right: 0;
-        svg {
-          width: 60px;
-          height: 60px;
-        }
+        .title { font-size: 1.6rem; }
+        .footerSocials { gap: 0.8rem; margin-top: 0.5rem; }
       }
 
       .footerLinks {
-        flex-direction: column;
-        gap: 0.7rem;
-        font-size: 1.08rem;
-        padding-left: 1.2rem;
-      }
+        flex: 1 1 100%;
+        gap: 1.5rem;
 
-      .footerSubscribe {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 0.5rem;
-        margin-left: 0;
-        margin-top: 0.7rem;
-        font-size: 0.95rem;
+        > div a, .contactBtn {
+          font-size: 1.05rem;
+        }
       }
+    }
 
-      .footerBottom {
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 0.7rem 0.5rem;
-        font-size: 0.9rem;
-        align-items: flex-start;
-      }
-
-      .footerSocials {
-        gap: 0.7rem;
-        margin-top: 0.3rem;
-      }
-
-      .copyright {
-        font-size: 0.9rem;
-      }
-
-      .scrollTopBtn {
-        right: 1rem;
-        bottom: 1rem;
-        width: 44px;
-        height: 44px;
-      }
+    .footerBottom {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem 2vw;
+      font-size: 0.95rem;
     }
   }
 
   @media (max-width: 600px) {
     .footerContent {
-      flex-direction: row-reverse;
-      align-items: flex-start;
-      justify-content: flex-start;
-      padding: 1rem 0.5rem 0.7rem 0.5rem;
-      gap: 0.7rem;
+      padding: 1.5rem 3vw;
+      gap: 1rem;
 
       .footerLogo {
-        margin-left: auto;
-        margin-right: 0;
-        svg {
-          width: 60px;
-          height: 60px;
-        }
+        .title { font-size: 1.4rem; }
+        .footerSocials { gap: 0.6rem; }
       }
 
-      .footerLinks {
-        flex-direction: column;
-        gap: 0.7rem;
-        font-size: 1.08rem;
-        padding-left: 1.2rem;
+      .footerLinks > div a, .contactBtn {
+        font-size: 1rem;
       }
+    }
 
-      .footerSubscribe {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 0.5rem;
-        margin-left: 0;
-        margin-top: 0.7rem;
-        font-size: 0.95rem;
-      }
-
-      .footerBottom {
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 0.7rem 0.5rem;
-        font-size: 0.9rem;
-        align-items: flex-start;
-      }
-
-      .footerSocials {
-        gap: 0.7rem;
-        margin-top: 0.3rem;
-      }
-
-      .copyright {
-        font-size: 0.9rem;
-      }
-
-      .scrollTopBtn {
-        right: 1rem;
-        bottom: 1rem;
-        width: 44px;
-        height: 44px;
-      }
+    .footerBottom {
+      font-size: 0.9rem;
+      padding: 0.8rem 3vw;
     }
   }
 }

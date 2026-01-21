@@ -19,8 +19,8 @@ import { constants } from "@/components/MainPage/ReviewsGallery/constants";
 
 export const ReviewGallery = () => {
     return (
-        <section className={styles.galleryBlock}>
-            <h2 className={styles.title}>МОИ ОТЗЫВЫ</h2>
+        <section className={styles.galleryBlock} id="reviews">
+            <h2 className={styles.title}>ОТЗЫВЫ</h2>
 
             <LightGallery
                 plugins={[lgZoom, lgThumbnail, lgFullscreen, lgShare]}
