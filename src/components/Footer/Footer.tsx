@@ -4,11 +4,12 @@ import React, { useState } from 'react';
 import ContactSidebar from '../ContactSidebar/ContactSidebar';
 import styles from './Footer.module.scss';
 import { FaWhatsapp, FaTelegramPlane, FaPhone } from 'react-icons/fa';
-import { handleScroll } from "@/lib/utils";
+import { useNavScroll } from "@/lib/utils";
 import { ScrollTopBtn } from "@/components/ui/ScrollTopBtn/ScrollTopBtn";
 
 const Footer = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+    const { handleNav } = useNavScroll();
 
   return (
     <footer className={styles.footer}>
@@ -24,9 +25,9 @@ const Footer = () => {
           <div className={styles.footerLinks}>
               <div>
                   <div className={styles.footerColTitle}></div>
-                  <a onClick={() => handleScroll('top')} style={{cursor: 'pointer'}}>Главная</a>
-                  <a onClick={() => handleScroll('services')} style={{cursor: 'pointer'}}>Услуги и цены</a>
-                  <a onClick={() => handleScroll('reviews')} style={{cursor: 'pointer'}}>Отзывы</a>
+                  <a onClick={() => handleNav('top')} style={{cursor: 'pointer'}}>Главная</a>
+                  <a onClick={() => handleNav('services')} style={{cursor: 'pointer'}}>Услуги и цены</a>
+                  <a onClick={() => handleNav('reviews')} style={{cursor: 'pointer'}}>Отзывы</a>
                   <button className={styles.contactBtn} onClick={() => setSidebarOpen(true)}>Связаться</button>
           </div>
         </div>

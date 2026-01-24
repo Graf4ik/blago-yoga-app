@@ -127,9 +127,13 @@
     .aboutTextWrap {
       padding: 0 0.5rem;
 
+      &:nth-child(1) {
+        margin: 4rem 0;
+      }
+
       .aboutText {
         font-size: 1rem;
-        text-align: center;
+        text-align: left;
 
         p {
           margin-bottom: 1rem;

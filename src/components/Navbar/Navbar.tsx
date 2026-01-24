@@ -2,11 +2,13 @@
 
 import React, { FC, useState } from 'react';
 import styles from './Navbar.module.scss';
-import { handleScroll } from "@/lib/utils";
+import { useNavScroll} from "@/lib/utils";
 import ContactSidebar from "@/components/ContactSidebar/ContactSidebar";
+import Link from "next/link";
 
 const Navbar: FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { handleNav } = useNavScroll();
 
   return (
     <nav className={styles.navbar}>
@@ -14,13 +16,18 @@ const Navbar: FC = () => {
         <div className={styles.navContent}>
           <div className={styles.leftGroup}>
             <div className={styles.logo}>
-              <img src="/logo.png" className={styles.logoImg}/>
+              <Link href="/">
+                <img src="/logo.png" className={styles.logoImg}/>
+              </Link>
             </div>
 
             <div className={styles.links}>
-              <button className={styles.linksBtn} onClick={() => handleScroll('top')}>Главная</button>
-              <button className={styles.linksBtn}  onClick={() => handleScroll('services')}>Услуги и цены</button>
-              <button className={styles.linksBtn}  onClick={() => handleScroll('reviews')}>Отзывы</button>
+              <button className={styles.linksBtn} onClick={() => handleNav('top')}>Главная</button>
+              <button className={styles.linksBtn} onClick={() => handleNav('services')}>Услуги и цены</button>
+              <button className={styles.linksBtn} onClick={() => handleNav('reviews')}>Отзывы</button>
+              <button className={styles.linksBtn}>
+                <Link href="/about">Обо мне</Link>
+              </button>
             </div>
           </div>
 

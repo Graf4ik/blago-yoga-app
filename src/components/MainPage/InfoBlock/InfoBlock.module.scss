@@ -124,13 +124,11 @@
       align-items: center;
       justify-content: center;
       padding: 0;
+      margin: 7rem 0;
 
-      .infoStub {
-        .infoImg {
-          min-height: 80px;
-          max-width: 90vw;
-          margin: 0.5rem auto;
-        }
+      .infoImg {
+        min-height: 80px;
+        margin: 0.5rem auto;
       }
     }
 
@@ -138,6 +136,7 @@
       flex: unset;
       min-height: 120px;
       padding: 0.7rem 0.7rem;
+      margin-top: 2rem;
 
       .infoText {
         font-size: 0.95rem;
