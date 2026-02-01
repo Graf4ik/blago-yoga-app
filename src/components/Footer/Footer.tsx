@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import ContactSidebar from '../ContactSidebar/ContactSidebar';
 import styles from './Footer.module.scss';
-import {FaWhatsapp, FaTelegramPlane, FaPhone, FaVk, FaYoutube} from 'react-icons/fa';
+import { FaWhatsapp, FaTelegramPlane, FaPhone, FaVk, FaYoutube } from 'react-icons/fa';
 import { useNavScroll } from "@/lib/scroll-utils";
 import { ScrollTopBtn } from "@/components/ui/ScrollTopBtn/ScrollTopBtn";
 import Link from "next/link";
@@ -28,10 +28,10 @@ const Footer = () => {
               </div>
               <div className={styles.footerChannelsSocials}>
                   <button>
-                      <Link href="https://t.me/BlagoYoga108" target="_blank" aria-label="Telegram">Телеграм BlagoYoga</Link>
+                      <Link href="https://t.me/BlagoYoga108" target="_blank" aria-label="Telegram">Телеграм BlagoYogaArt</Link>
                   </button>
                   <button>
-                      <Link href="https://t.me/+OYydpDiJvnVlNzky" target="_blank" aria-label="Telegram">Телеграм ОМ-чантинг</Link>
+                      <Link href="https://t.me/+OYydpDiJvnVlNzky" target="_blank" aria-label="Telegram">Телеграм Ом-чантинг</Link>
                   </button>
               </div>
           </div>
@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
       </div>
         <div className={styles.footerBottom}>
-            <span className={styles.copyright}>© 2025 Все права защищены.</span>
+            <span className={styles.copyright}>© 2026 Все права защищены.</span>
         </div>
         <ContactSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)}/>
         <ScrollTopBtn/>

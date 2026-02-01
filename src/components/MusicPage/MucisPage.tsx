@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styles from './MusicPage.module.scss';
-import { musicCards } from "@/components/MusicPage/contants";
+import { musicCards } from "@/components/MusicPage/constants";
 import MusicCard from "@/components/MusicCard/MusicCard";
 
 const MusicPage = () => {
