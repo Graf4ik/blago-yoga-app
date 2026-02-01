@@ -1,9 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './AboutPage.module.scss';
+import ContactSidebar from "@/components/ContactSidebar/ContactSidebar";
 
 const AboutPage = () => {
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+
     return (
         <section className={styles.aboutPage}>
             <div className={styles.hero}>
@@ -121,10 +124,11 @@ const AboutPage = () => {
                     Готовы почувствовать интегративный подход на собственном опыте?
                 </p>
 
-                <button className={styles.ctaButton}>
+                <button className={styles.ctaButton} onClick={() => setSidebarOpen(true)}>
                     Записаться на бесплатное пробное занятие
                 </button>
             </div>
+            <ContactSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)}/>
         </section>
     );
 };

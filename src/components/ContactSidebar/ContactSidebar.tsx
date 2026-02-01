@@ -42,7 +42,7 @@ const ContactSidebar: React.FC<ContactSidebarProps> = ({ open, onClose }) => {
       />
       <aside className={styles.sidebar + (open ? ' ' + styles.open : '')}>
         <button className={styles.closeBtn} onClick={onClose} aria-label="Закрыть">×</button>
-        <h2 className={styles.title}>Задать вопрос</h2>
+        <h2 className={styles.title}>Записаться или задать вопрос</h2>
         <form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
           <label className={styles.label} htmlFor="name">Имя</label>
           <input
@@ -60,14 +60,14 @@ const ContactSidebar: React.FC<ContactSidebarProps> = ({ open, onClose }) => {
               value={phone}
               onChange={(val: string) => setPhone(val)}
           />
-          <label className={styles.label} htmlFor="question">Вопрос</label>
+          <label className={styles.label} htmlFor="question">Сообщение</label>
           <textarea
             id="question"
             className={styles.input}
             value={question}
             onChange={e => setQuestion(e.target.value)}
             required
-            placeholder="Ваш вопрос"
+            placeholder="Пожелание или вопрос"
             maxLength={255}
             rows={4}
           />
