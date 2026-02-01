@@ -2,7 +2,7 @@
 
 import React, { FC, useState } from 'react';
 import styles from './Navbar.module.scss';
-import { useNavScroll} from "@/lib/utils";
+import { useNavScroll} from "@/lib/scroll-utils";
 import ContactSidebar from "@/components/ContactSidebar/ContactSidebar";
 import Link from "next/link";
 
@@ -27,6 +27,9 @@ const Navbar: FC = () => {
               <button className={styles.linksBtn} onClick={() => handleNav('reviews')}>Отзывы</button>
               <button className={styles.linksBtn}>
                 <Link href="/about">Обо мне</Link>
+              </button>
+              <button className={styles.linksBtn}>
+                <Link href="/music">Медитации</Link>
               </button>
             </div>
           </div>

@@ -3,9 +3,10 @@
 import React, { useState } from 'react';
 import ContactSidebar from '../ContactSidebar/ContactSidebar';
 import styles from './Footer.module.scss';
-import { FaWhatsapp, FaTelegramPlane, FaPhone } from 'react-icons/fa';
-import { useNavScroll } from "@/lib/utils";
+import {FaWhatsapp, FaTelegramPlane, FaPhone, FaVk, FaYoutube} from 'react-icons/fa';
+import { useNavScroll } from "@/lib/scroll-utils";
 import { ScrollTopBtn } from "@/components/ui/ScrollTopBtn/ScrollTopBtn";
+import Link from "next/link";
 
 const Footer = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -17,9 +18,21 @@ const Footer = () => {
           <div className={styles.footerLogo}>
               <h3 className={styles.title}>BLAGO YOGA ART</h3>
               <div className={styles.footerSocials}>
-                  <a href="#" aria-label="WhatsApp"><FaWhatsapp size={22}/></a>
-                  <a href="#" aria-label="Telegram"><FaTelegramPlane size={22}/></a>
+                  <a href="https://t.me/BlagoYoga108" target="_blank" aria-label="Telegram"><FaTelegramPlane size={22}/></a>
+                  <a href="https://wa.me/79291891973" target="_blank" aria-label="WhatsApp"><FaWhatsapp size={22}/></a>
+                  <a href="https://vk.ru/club225967703" target="_blank" aria-label="VK"><FaVk size={22}/></a>
+                  <a href="https://www.youtube.com/@blagoyoga108" target="_blank" aria-label="Youtube"><FaYoutube
+                      size={22}/></a>
                   <a href="tel:+79991234567" aria-label="Телефон"><FaPhone size={22}/></a>
+
+              </div>
+              <div className={styles.footerChannelsSocials}>
+                  <button>
+                      <Link href="https://t.me/BlagoYoga108" target="_blank" aria-label="Telegram">Телеграм BlagoYoga</Link>
+                  </button>
+                  <button>
+                      <Link href="https://t.me/+OYydpDiJvnVlNzky" target="_blank" aria-label="Telegram">Телеграм ОМ-чантинг</Link>
+                  </button>
               </div>
           </div>
           <div className={styles.footerLinks}>
@@ -28,15 +41,17 @@ const Footer = () => {
                   <a onClick={() => handleNav('top')} style={{cursor: 'pointer'}}>Главная</a>
                   <a onClick={() => handleNav('services')} style={{cursor: 'pointer'}}>Услуги и цены</a>
                   <a onClick={() => handleNav('reviews')} style={{cursor: 'pointer'}}>Отзывы</a>
-                  <button className={styles.contactBtn} onClick={() => setSidebarOpen(true)}>Связаться</button>
+                  <Link href="/about">Обо мне</Link>
+                  <Link href="/music">Медитации</Link>
+                  <a onClick={() => setSidebarOpen(true)}>Задать вопрос</a>
+              </div>
           </div>
+      </div>
+        <div className={styles.footerBottom}>
+            <span className={styles.copyright}>© 2025 Все права защищены.</span>
         </div>
-      </div>
-      <div className={styles.footerBottom}>
-        <span className={styles.copyright}>© 2025 Все права защищены.</span>
-      </div>
-      <ContactSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)}/>
-      <ScrollTopBtn />
+        <ContactSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)}/>
+        <ScrollTopBtn/>
     </footer>
   );
 };

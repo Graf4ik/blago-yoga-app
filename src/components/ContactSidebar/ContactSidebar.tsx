@@ -1,5 +1,9 @@
+'use client'
+
 import React, { useState } from 'react';
 import styles from './ContactSidebar.module.scss';
+import { PhoneInput } from "@/components/ui/PhoneInput/PhoneInput";
+import { sendContactForm } from "@/lib/api-utils";
 
 interface ContactSidebarProps {
   open: boolean;
@@ -12,20 +16,26 @@ const ContactSidebar: React.FC<ContactSidebarProps> = ({ open, onClose }) => {
   const [question, setQuestion] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ name, phone, question });
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 2000);
-    setName('');
-    setPhone('');
-    setQuestion('');
-    onClose();
+
+    try {
+      await sendContactForm({ name, phone, question })
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 2000);
+
+      setName('');
+      setPhone('');
+      setQuestion('');
+      onClose();
+    } catch (err) {
+      console.error(err);
+      alert('Не удалось отправить форму. Попробуйте позже.');
+    }
   };
 
   return (
     <>
-      {/* Затемнение фона */}
       <div
         className={styles.overlay + (open ? ' ' + styles.open : '')}
         onClick={onClose}
@@ -42,18 +52,13 @@ const ContactSidebar: React.FC<ContactSidebarProps> = ({ open, onClose }) => {
             value={name}
             onChange={e => setName(e.target.value)}
             required
+            maxLength={35}
             placeholder="Ваше имя"
           />
           <label className={styles.label} htmlFor="phone">Телефон</label>
-          <input
-            id="phone"
-            className={styles.input}
-            type="tel"
-            value={phone}
-            onChange={e => setPhone(e.target.value)}
-            required
-            placeholder="+7 XXX XXX XX XX"
-            pattern="\+7\s?\d{3}\s?\d{3}\s?\d{2}\s?\d{2}"
+          <PhoneInput
+              value={phone}
+              onChange={(val: string) => setPhone(val)}
           />
           <label className={styles.label} htmlFor="question">Вопрос</label>
           <textarea
@@ -63,6 +68,7 @@ const ContactSidebar: React.FC<ContactSidebarProps> = ({ open, onClose }) => {
             onChange={e => setQuestion(e.target.value)}
             required
             placeholder="Ваш вопрос"
+            maxLength={255}
             rows={4}
           />
           <button className={styles.submitBtn} type="submit">Отправить</button>
@@ -73,4 +79,4 @@ const ContactSidebar: React.FC<ContactSidebarProps> = ({ open, onClose }) => {
   );
 };
 
-export default ContactSidebar; 
+export default ContactSidebar;

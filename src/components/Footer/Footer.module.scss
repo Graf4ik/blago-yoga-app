@@ -41,6 +41,44 @@
           }
         }
       }
+
+      .footerChannelsSocials {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 2rem;
+
+        button {
+          background: #b8a47a;
+          color: #543927;
+          border: none;
+          border-radius: 6px;
+          padding: 0.5rem 1rem;
+          font-size: 1rem;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          a {
+            color: inherit;
+            text-decoration: none;
+          }
+
+          &:hover {
+            background: #d0b97f;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+          }
+
+          &:active {
+            transform: translateY(0);
+            box-shadow: none;
+          }
+        }
+      }
     }
 
     .footerLinks {
@@ -54,7 +92,7 @@
         flex-direction: column;
         gap: 0.7rem;
 
-        a, .contactBtn {
+        a {
           color: #fff;
           font-size: 1.13rem;
           text-decoration: none;

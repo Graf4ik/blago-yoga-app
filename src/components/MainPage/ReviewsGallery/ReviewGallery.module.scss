@@ -4,51 +4,78 @@
   padding: 0 3vw;
   text-align: center;
 
-  :global {
-    .lg-backdrop {
-      background: rgba(0, 0, 0, 0.92);
+  .title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+
+  .galleryWrapper {
+    .grid {
+      column-count: 5;
+      column-gap: 16px;
+
+      .item {
+        break-inside: avoid;
+        margin-bottom: 16px;
+        display: block;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #f2f2f2;
+
+        .img {
+          width: 100%;
+          height: auto;
+          display: block;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover img {
+          transform: scale(1.05);
+        }
+      }
     }
 
-    .lg-toolbar .lg-icon {
-      color: white;
-    }
+    :global {
+      .lg-backdrop {
+        background: rgba(0, 0, 0, 0.92);
+      }
 
-    .lg-thumb-item {
-      border-radius: 6px;
-      overflow: hidden;
+      .lg-toolbar .lg-icon {
+        color: white;
+      }
+
+      .lg-thumb-item {
+        border-radius: 6px;
+        overflow: hidden;
+      }
     }
   }
-}
 
-.title {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 40px;
-}
+  .showMore {
+    margin: 32px auto 0;
+    padding: 14px 32px;
+    border-radius: 32px;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition:
+            transform 0.3s ease,
+            background-color 0.3s ease,
+            color 0.3s ease;
 
-.grid {
-  column-count: 5;
-  column-gap: 16px;
-}
+    &:hover {
+      transform: scale(1.05);
+      background-color: #222;
+      color: #fff;
+    }
 
-.item {
-  break-inside: avoid;
-  margin-bottom: 16px;
-  display: block;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #f2f2f2;
-
-  &:hover img {
-    transform: scale(1.05);
+    &:active {
+      transform: scale(0.97);
+    }
   }
-}
-
-.img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
 }
 
 @media (max-width: 1024px) {
