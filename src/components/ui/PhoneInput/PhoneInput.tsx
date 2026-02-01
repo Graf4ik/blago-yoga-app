@@ -2,7 +2,12 @@ import { IMaskInput } from "react-imask";
 import styles from "@/components/ContactSidebar/ContactSidebar.module.scss";
 import React from "react";
 
-export const PhoneInput = ({value, onChange}: any) => {
+interface PhoneInputProps {
+    value: string;
+    onChange: (value: string) => void;
+}
+
+export const PhoneInput = ({value, onChange}: PhoneInputProps) => {
     return (
         <IMaskInput
             mask="+7 (000) 000-00-00"
