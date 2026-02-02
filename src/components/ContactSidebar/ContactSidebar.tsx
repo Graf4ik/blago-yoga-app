@@ -14,6 +14,8 @@ const ContactSidebar: React.FC<ContactSidebarProps> = ({ open, onClose }) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [question, setQuestion] = useState('');
+  const [privacyConsent, setPrivacyConsent] = useState(false);
+  const [dataConsent, setDataConsent] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -42,18 +44,18 @@ const ContactSidebar: React.FC<ContactSidebarProps> = ({ open, onClose }) => {
       />
       <aside className={styles.sidebar + (open ? ' ' + styles.open : '')}>
         <button className={styles.closeBtn} onClick={onClose} aria-label="Закрыть">×</button>
-        <h2 className={styles.title}>Записаться или задать вопрос</h2>
+        <h2 className={styles.title}>Задать вопрос</h2>
         <form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
           <label className={styles.label} htmlFor="name">Имя</label>
           <input
-            id="name"
-            className={styles.input}
-            type="text"
-            value={name}
-            onChange={e => setName(e.target.value)}
-            required
-            maxLength={35}
-            placeholder="Ваше имя"
+              id="name"
+              className={styles.input}
+              type="text"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              required
+              maxLength={35}
+              placeholder="Ваше имя"
           />
           <label className={styles.label} htmlFor="phone">Телефон</label>
           <PhoneInput
@@ -62,16 +64,48 @@ const ContactSidebar: React.FC<ContactSidebarProps> = ({ open, onClose }) => {
           />
           <label className={styles.label} htmlFor="question">Сообщение</label>
           <textarea
-            id="question"
-            className={styles.input}
-            value={question}
-            onChange={e => setQuestion(e.target.value)}
-            required
-            placeholder="Пожелание или вопрос"
-            maxLength={255}
-            rows={4}
+              id="question"
+              className={styles.input}
+              value={question}
+              onChange={e => setQuestion(e.target.value)}
+              required
+              placeholder="Пожелание или вопрос"
+              maxLength={255}
+              rows={4}
           />
-          <button className={styles.submitBtn} type="submit">Отправить</button>
+
+          <label className={styles.consent}>
+            <input
+                className={styles.checkbox}
+                type="checkbox"
+                checked={privacyConsent}
+                onChange={(e) => setPrivacyConsent(e.target.checked)}
+                required
+            />
+            <span>
+              Я согласен(а) с {' '}
+              <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+              политикой конфиденциальности
+              </a>{' '}
+              и даю согласие на обработку персональных данных
+            </span>
+          </label>
+
+          <label className={styles.consent} htmlFor="dataProcessing">
+            <input
+                type="checkbox"
+                id="dataProcessing"
+                checked={dataConsent}
+                className={styles.checkbox}
+                onChange={(e) => setDataConsent(e.target.checked)}
+                required
+            />
+            <span>
+                  Я даю согласие на обработку моих персональных данных (имя, телефон, сообщение)
+              </span>
+          </label>
+
+          <button className={styles.submitBtn} disabled={!(privacyConsent && dataConsent)} type="submit">Отправить</button>
         </form>
         {submitted && <div className={styles.success}>Спасибо! Мы свяжемся с вами.</div>}
       </aside>

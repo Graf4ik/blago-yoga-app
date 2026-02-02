@@ -54,7 +54,7 @@ const AccordionItem = ({ header, content }: AccordionItem) => {
                 className={styles.contentWrapper}
                 style={{ height: "0px", overflow: "hidden", transition: "height 0.35s ease" }}
                 onTransitionEnd={() => {
-                    if (open) wrapperRef.current!.style.height = "auto"; // после раскрытия делаем auto
+                    if (open) wrapperRef.current!.style.height = "auto";
                 }}
             >
                 <div className={`${styles.content} ${open ? styles.visible : ""}`}>
