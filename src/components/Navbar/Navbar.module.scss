@@ -14,6 +14,7 @@
     padding: 0 40px;
 
     .navContent {
+      position: relative;
       height: 100%;
       display: flex;
       align-items: center;
@@ -22,26 +23,20 @@
       .leftGroup {
         display: flex;
         align-items: center;
-        gap: 1rem;
       }
 
-      .logo {
-        user-select: none;
-
-        .logoImg {
-          width: 95px;
-          display: block;
-        }
+      .logoImg {
+        width: 95px;
+        display: block;
       }
 
       .links {
         display: flex;
         align-items: center;
         gap: 0.8rem;
-        flex-wrap: wrap;
 
         .linksBtn {
-          background: #232325;
+          background: transparent;
           color: #a79e94;
           border: none;
           border-radius: 1.5rem;
@@ -49,28 +44,71 @@
           font-size: 1rem;
           cursor: pointer;
           transition: background 0.2s;
-          white-space: nowrap;
 
-          &:hover,
-          &:focus {
+          &:hover {
             background: #39393b;
           }
         }
       }
 
+      .questionBtn {
+        background: #a79e94;
+        color: #232325;
+        font-weight: 500;
+        border-radius: 1.5rem;
+        padding: 0.45rem 1.2rem;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          background: #c2b8ad;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        &:focus {
+          outline: none;
+          background: #c2b8ad;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        &:active {
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+      }
+
       .burgerMenu {
-        display: flex;
-        align-items: center;
+        display: none;
 
         .menuButton {
+          width: 32px;
+          height: 24px;
           background: none;
           border: none;
-          color: #a79e94;
-          padding: 0.5rem;
           cursor: pointer;
           display: flex;
-          align-items: center;
-          justify-content: center;
+          flex-direction: column;
+          justify-content: space-between;
+
+          span {
+            height: 2px;
+            width: 100%;
+            background: #a79e94;
+            transition: 0.3s;
+          }
+
+          &.open {
+            span:nth-child(1) {
+              transform: rotate(45deg) translateY(10px);
+            }
+
+            span:nth-child(2) {
+              opacity: 0;
+            }
+
+            span:nth-child(3) {
+              transform: rotate(-45deg) translateY(-10px);
+            }
+          }
         }
       }
     }
@@ -82,56 +120,51 @@
     height: 72px;
 
     .container {
-      padding: 0 16px;
+      padding: 0;
 
       .navContent {
-        .logo .logoImg {
+        .logoImg {
           width: 72px;
+          margin-left: 1rem;
         }
 
-        .leftGroup {
-          gap: 0.6rem;
-        }
-
-        .links {
-          gap: 0.5rem;
-
-          .linksBtn {
-            padding: 0.3rem 0.8rem;
-            font-size: 0.95rem;
-          }
+        .questionBtn {
+          display: none;
         }
 
         .burgerMenu {
-          margin-left: 0.5rem;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 600px) {
-  .navbar {
-    height: 90px;
-
-    .container {
-      padding: 0 12px;
-
-      .navContent {
-        .logo .logoImg {
-          width: 60px;
-        }
-
-        .leftGroup {
-          gap: 0.4rem;
+          display: block;
+          margin-right: 2rem;
         }
 
         .links {
-          gap: 0.4rem;
+          position: absolute;
+          top: 58px;
+          left: 0;
+          right: 0;
+          background: #232325;
+          flex-direction: column;
+          align-items: stretch;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+
+          &.linksOpen {
+            max-height: 400px;
+          }
 
           .linksBtn {
-            padding: 0.25rem 0.6rem;
-            font-size: 0.9rem;
+            padding: 1rem;
+            border-radius: 0;
+            text-align: left;
+            border-bottom: 1px solid #2f2f31;
+          }
+
+          .mobileQuestionBtn {
+            background: #a79e94;
+            color: #232325;
+            font-weight: 500;
+            text-align: center;
           }
         }
       }

@@ -47,7 +47,7 @@ const PrivacyPage = () => {
 
             <h2>6. Контакты</h2>
             <p>
-                Ответственное лицо: <strong>Графова Екатерина Сергеевна</strong><br />
+                Ответственное лицо: <strong>Благоева Екатерина Сергеевна</strong><br />
                 Email: <strong>katerina-grafova@mail.ru</strong>
             </p>
         </section>
