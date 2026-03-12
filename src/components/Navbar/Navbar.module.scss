@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 100;
-  height: 92px;
+  height: 110px;
   background: #232325;
   display: flex;
   align-items: center;
@@ -26,7 +26,8 @@
       }
 
       .logoImg {
-        width: 95px;
+        margin-top: -20px;
+        width: 120px;
         display: block;
       }
 
@@ -117,15 +118,16 @@
 
 @media (max-width: 900px) {
   .navbar {
-    height: 72px;
+    height: 100px;
 
     .container {
       padding: 0;
 
       .navContent {
         .logoImg {
-          width: 72px;
-          margin-left: 1rem;
+          width: 100px;
+          margin-left: 0.5rem;
+          margin-top: -10px;
         }
 
         .questionBtn {
@@ -139,7 +141,7 @@
 
         .links {
           position: absolute;
-          top: 58px;
+          top: 80px;
           left: 0;
           right: 0;
           background: #232325;

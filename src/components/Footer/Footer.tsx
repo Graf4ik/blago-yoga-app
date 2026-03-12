@@ -14,18 +14,25 @@ const Footer = () => {
 
     return (
         <footer className={styles.footer}>
-            <h3 className={styles.logo}>BLAGO YOGA ART</h3>
+            <div className={styles.logo}>
+                <Link href="/">
+                    <img src="/logo.png" className={styles.logoImg}/>
+                </Link>
+            </div>
 
             <div className={styles.footerContent}>
 
                 <div className={styles.footerCol}>
                     <span className={styles.colTitle}>Я в соцсетях</span>
                     <div className={styles.footerSocials}>
-                        <a href="https://t.me/BlagoYoga108" target="_blank" aria-label="Telegram"><FaTelegramPlane size={22} /></a>
-                        <a href="https://wa.me/79291891973" target="_blank" aria-label="WhatsApp"><FaWhatsapp size={22} /></a>
-                        <a href="https://vk.ru/club225967703" target="_blank" aria-label="VK"><FaVk size={22} /></a>
-                        <a href="https://www.youtube.com/@blagoyoga108" target="_blank" aria-label="Youtube"><FaYoutube size={22} /></a>
-                        <a href="tel:+79991234567" aria-label="Телефон"><FaPhone size={22} /></a>
+                        <a href="https://t.me/BlagoYoga108" target="_blank" aria-label="Telegram"><FaTelegramPlane
+                            size={22}/></a>
+                        <a href="https://wa.me/79291891973" target="_blank" aria-label="WhatsApp"><FaWhatsapp
+                            size={22}/></a>
+                        <a href="https://vk.ru/club225967703" target="_blank" aria-label="VK"><FaVk size={22}/></a>
+                        <a href="https://www.youtube.com/@blagoyoga108" target="_blank" aria-label="Youtube"><FaYoutube
+                            size={22}/></a>
+                        <a href="tel:+79991234567" aria-label="Телефон"><FaPhone size={22}/></a>
                     </div>
                     <div className={styles.footerChannelsSocials}>
                         <Link href="https://t.me/BlagoYoga108" target="_blank">Телеграм BlagoYogaArt</Link>
@@ -55,8 +62,8 @@ const Footer = () => {
                 <span className={styles.copyright}>© 2026 Все права защищены.</span>
             </div>
 
-            <ContactSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-            <ScrollTopBtn />
+            <ContactSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)}/>
+            <ScrollTopBtn/>
         </footer>
     );
 };
